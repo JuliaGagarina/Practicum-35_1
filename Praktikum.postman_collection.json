@@ -1,0 +1,320 @@
+{
+	"info": {
+		"_postman_id": "c107bec2-b83e-4e31-bfbc-4bfd5bedd9de",
+		"name": "Praktikum",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20953271"
+	},
+	"item": [
+		{
+			"name": "Склады",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://1feb1bce-e1cd-463e-b4a8-bab19cfbb6c1.serverhub.praktikum-services.ru/api/v1/warehouses",
+					"protocol": "https",
+					"host": [
+						"1feb1bce-e1cd-463e-b4a8-bab19cfbb6c1",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"warehouses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Набор \"На пикник\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://1feb1bce-e1cd-463e-b4a8-bab19cfbb6c1.serverhub.praktikum-services.ru/api/v1/kits?cardId=1",
+					"protocol": "https",
+					"host": [
+						"1feb1bce-e1cd-463e-b4a8-bab19cfbb6c1",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kits"
+					],
+					"query": [
+						{
+							"key": "cardId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список наборов в карточке",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardId\": 1,\r\n    \"name\": \"В космос\"\r\n}"
+				},
+				"url": {
+					"raw": "https://ec8d409f-1a1d-4cd5-b175-ad0a0bcacfe6.serverhub.praktikum-services.ru/api/v1/kits",
+					"protocol": "https",
+					"host": [
+						"ec8d409f-1a1d-4cd5-b175-ad0a0bcacfe6",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kits"
+					],
+					"query": [
+						{
+							"key": "cardId",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "\"В+космос\"",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создать пустой набор",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardId\": \"1\",\r\n    \"name\": \"В космос\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://f948e088-3f3d-4b47-ac62-f2f9859d1d21.serverhub.praktikum-services.ru/api/v1/kits?cardId=1&name=В космос",
+					"protocol": "https",
+					"host": [
+						"f948e088-3f3d-4b47-ac62-f2f9859d1d21",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kits"
+					],
+					"query": [
+						{
+							"key": "cardId",
+							"value": "1"
+						},
+						{
+							"key": "name",
+							"value": "В космос"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Создать пустой набор.Я.Прилавок",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cardId\": \"4\",\r\n    \"name\": \"Лютая дичь\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://5e9ee6c3-7173-4f5f-abb6-e5bc12571370.serverhub.praktikum-services.ru/api/v1/kits?cardId=4&name=Лютая дичь",
+					"protocol": "https",
+					"host": [
+						"5e9ee6c3-7173-4f5f-abb6-e5bc12571370",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kits"
+					],
+					"query": [
+						{
+							"key": "cardId",
+							"value": "4"
+						},
+						{
+							"key": "name",
+							"value": "Лютая дичь"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список наборов по продуктам",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ids\": [\r\n        1,\r\n        22\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://f948e088-3f3d-4b47-ac62-f2f9859d1d21.serverhub.praktikum-services.ru/api/v1/products/kits?id=1&id=22",
+					"protocol": "https",
+					"host": [
+						"f948e088-3f3d-4b47-ac62-f2f9859d1d21",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"kits"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "id",
+							"value": "22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список продуктов по имени набора",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ids\": [\r\n        1,\r\n        22\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://f948e088-3f3d-4b47-ac62-f2f9859d1d21.serverhub.praktikum-services.ru/api/v1/kits/search?name=В+космос",
+					"protocol": "https",
+					"host": [
+						"f948e088-3f3d-4b47-ac62-f2f9859d1d21",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"kits",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "В+космос"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверить наличие товаров на складах Яндекс.Прилавок",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"products\": [\r\n        {\r\n            \"id\": 5,\r\n            \"quantity\": 1\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"quantity\": 5\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://730bd603-3ff2-43fd-9e10-4c319b33a9c1.serverhub.praktikum-services.ru/api/v1/warehouses/check",
+					"protocol": "https",
+					"host": [
+						"730bd603-3ff2-43fd-9e10-4c319b33a9c1",
+						"serverhub",
+						"praktikum-services",
+						"ru"
+					],
+					"path": [
+						"api",
+						"v1",
+						"warehouses",
+						"check"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "quantity",
+							"value": "3",
+							"disabled": true
+						},
+						{
+							"key": "deliveryTime",
+							"value": "6",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
